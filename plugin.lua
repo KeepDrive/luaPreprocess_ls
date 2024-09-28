@@ -1,7 +1,7 @@
 local preprocess = require("LuaPreprocess/preprocess").processString
 
 function OnSetText(_, text)
-  local success, processed_text = pcall(preprocess, {code = text})
+  local success, processed_text = pcall(preprocess, {code = text, strictMacroArguments = false})
   if not success then
     return
   end
